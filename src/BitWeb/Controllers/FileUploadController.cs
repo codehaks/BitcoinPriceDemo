@@ -5,6 +5,7 @@ using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.Extensions.Logging;
+using BitWeb.Domain;
 
 namespace FileUploadApi.Controllers
 {
@@ -38,7 +39,9 @@ namespace FileUploadApi.Controllers
             // Process the file line by line asynchronously
             await foreach (var line in ProcessFileAsync(file))
             {
-                _logger.LogInformation($"Processing line: {line}");
+                var data = CsvDeserializer.DeserializeLine(line);
+                await Task.Delay(500);
+                _logger.LogInformation($"Current Price line: {data.Close}");
             }
 
             _logger.LogInformation("File upload and processing completed.");
