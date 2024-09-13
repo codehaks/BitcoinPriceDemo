@@ -1,7 +1,20 @@
 using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
+using Microsoft.Extensions.Configuration;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+
+// Configure Serilog
+Log.Logger = new LoggerConfiguration()
+//.MinimumLevel.Information()
+//.WriteTo.Console()
+    .ReadFrom.Configuration(builder.Configuration)
+
+    .CreateLogger();
+
+builder.Host.UseSerilog(); // Use Serilog for logging
+
 
 // Add services to the container.
 builder.Services.AddRazorPages();
