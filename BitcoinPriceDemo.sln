@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35309.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PriceUploader", "src\PriceUploader\PriceUploader.csproj", "{B8118AFB-FCD4-4DBC-A416-E1DC76AC76C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BitWeb", "src\BitWeb\BitWeb.csproj", "{122C21F6-FE3A-40BB-87AE-A59D0866297F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8118AFB-FCD4-4DBC-A416-E1DC76AC76C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8118AFB-FCD4-4DBC-A416-E1DC76AC76C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8118AFB-FCD4-4DBC-A416-E1DC76AC76C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8118AFB-FCD4-4DBC-A416-E1DC76AC76C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{122C21F6-FE3A-40BB-87AE-A59D0866297F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{122C21F6-FE3A-40BB-87AE-A59D0866297F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{122C21F6-FE3A-40BB-87AE-A59D0866297F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{122C21F6-FE3A-40BB-87AE-A59D0866297F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EB68DAA1-B09B-4858-BC38-06ED640C9E63}
+	EndGlobalSection
+EndGlobal
