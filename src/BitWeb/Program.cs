@@ -23,14 +23,14 @@ builder.Services.AddControllers();
 
 builder.Services.Configure<KestrelServerOptions>(options =>
 {
-    options.Limits.MaxRequestBodySize = 102428800; // 50 MB
-    options.Limits.KeepAliveTimeout = TimeSpan.FromMinutes(5);
-    options.Limits.RequestHeadersTimeout = TimeSpan.FromMinutes(5);
+    options.Limits.MaxRequestBodySize = 102428800; 
+    options.Limits.KeepAliveTimeout = TimeSpan.FromMinutes(10);
+    options.Limits.RequestHeadersTimeout = TimeSpan.FromMinutes(10);
 });
 
 builder.Services.Configure<FormOptions>(options =>
 {
-    options.MultipartBodyLengthLimit = 102428800; // 50 MB
+    options.MultipartBodyLengthLimit = 102428800; 
 });
 
 var app = builder.Build();
