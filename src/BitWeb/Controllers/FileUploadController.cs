@@ -38,13 +38,15 @@ namespace FileUploadApi.Controllers
 
             var backgroundTask = Task.Run(() => SimulateBackgroundWork());
 
+            var counter = 1;
 
             // Process the file line by line asynchronously
             await foreach (var line in ProcessFileAsync(file))
             {
                 var data = CsvDeserializer.DeserializeLine(line);
-               // await Task.Delay(500);
-                _logger.LogInformation($"Current Price line: {data.Close}");
+                 await Task.Delay(100);
+                _logger.LogInformation($"Current Price line {counter} : {data.Close}");
+                counter++;
             }
 
             _logger.LogInformation("File upload and processing completed.");
@@ -79,11 +81,13 @@ namespace FileUploadApi.Controllers
             using (var reader = new StreamReader(stream, Encoding.UTF8))
             {
                 string? line;
+                var counter = 1;
                 while ((line = await reader.ReadLineAsync()) != null)
                 {
                     var data = CsvDeserializer.DeserializeLine(line);
-                  //  await Task.Delay(500); // Simulate some processing delay
-                    _logger.LogInformation($"Current Price line: {data.Close}");
+                     await Task.Delay(100); // Simulate some processing delay
+                    _logger.LogInformation($"Current Price line {counter} : {data.Close}");
+                    counter++;
                 }
             }
 
@@ -93,10 +97,10 @@ namespace FileUploadApi.Controllers
 
         private async Task SimulateBackgroundWork()
         {
-            for (int i = 0; i < 10; i++)
+            for (int i = 1; i <= 1000; i++)
             {
-                _logger.LogInformation($"Background task running at {DateTime.Now}");
-                await Task.Delay(1000); // Simulate a background task that runs every second
+                _logger.LogInformation($"Background task ({i}) running at {DateTime.Now}");
+                await Task.Delay(1);
             }
         }
     }
